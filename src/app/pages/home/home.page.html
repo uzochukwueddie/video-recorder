@@ -1,0 +1,74 @@
+<ion-content [scrollEvents]="true" 
+(ionScroll)="onScroll($event)"
+(ionScrollEnd)="onScrollEnd($event)">
+  <ion-spinner color="primary" name="lines" *ngIf="isEmpty"></ion-spinner>
+
+  <ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4" *ngFor="let video of videos">
+          <ion-item (click)="playVideo(video.location)">
+            <img [src]="video.thumbnailURL">
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4" *ngFor="let video of videos">
+          <ion-item (click)="playVideo(video.location)">
+            <img [src]="video.thumbnailURL">
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4" *ngFor="let video of videos">
+          <ion-item (click)="playVideo(video.location)">
+            <img [src]="video.thumbnailURL">
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4" *ngFor="let video of videos">
+          <ion-item (click)="playVideo(video.location)">
+            <img [src]="video.thumbnailURL">
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4" *ngFor="let video of videos">
+          <ion-item (click)="playVideo(video.location)">
+            <img [src]="video.thumbnailURL">
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4" *ngFor="let video of videos">
+          <ion-item (click)="playVideo(video.location)">
+            <img [src]="video.thumbnailURL">
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4" *ngFor="let video of videos">
+          <ion-item (click)="playVideo(video.location)">
+            <img [src]="video.thumbnailURL">
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+
+  <ion-list class="no__video__row" *ngIf="videos.length === 0">
+    <p>No video recorded yet</p>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed" *ngIf="lastModifiedVideo">
+    <ion-fab-button *ngIf="isNotScrolling" class="last__vid__icon" (click)="playVideo(lastModifiedVideo.location)">
+      <img [src]="lastModifiedVideo.thumbnailURL">
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed" *ngIf="isNotScrolling">
+    <ion-fab-button (click)="captureVideo()">
+      <ion-icon class="play__icon" name="videocam"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,5 +1,7 @@
 {
   "name": "video-recorder",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
